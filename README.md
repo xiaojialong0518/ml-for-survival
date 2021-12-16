@@ -25,7 +25,7 @@ This repository contains the code and models of the paper **"Machine Learning Mo
 - cox.pkl
 - cox-en.pkl
 - svm.pkl
-- rsf.pkl
+- rsf.pkl (please download this file in the requeset "add rsf.pkl')
 
 **Following are some tips help you to use our code and data templates:**
 1. Please move all the files and codes to the path"C:\code"
