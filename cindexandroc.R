@@ -43,22 +43,22 @@ library(survivalROC)
 library(survcomp)
 #library(readxl)
 #cox is EN cox2 is traditional
-cox <- read.csv("C:/Users/xiao/Desktop/研究生毕业论文/rocdatacox.csv")
+cox <- read.csv("C:/code/rocdatacox.csv")
 coxr3=  survivalROC(Stime= cox$time, status=cox$os, marker=-cox$marker,  predict.time=36,method = "KM")
 coxr5=  survivalROC(Stime= cox$time, status=cox$os, marker=-cox$marker,  predict.time=60,method = "KM")
 coxr10=  survivalROC(Stime= cox$time, status=cox$os, marker=-cox$marker,  predict.time=120,method = "KM")
 
-cox2 <- read.csv("C:/Users/xiao/Desktop/研究生毕业论文/rocdatacox2.csv")
+cox2 <- read.csv("C:/code/rocdatacox2.csv")
 cox2r3=  survivalROC(Stime= cox2$time, status=cox2$os, marker=cox2$marker,  predict.time=36,method = "KM")
 cox2r5=  survivalROC(Stime= cox2$time, status=cox2$os, marker=cox2$marker,  predict.time=60,method = "KM")
 cox2r10=  survivalROC(Stime= cox2$time, status=cox2$os, marker=cox2$marker,  predict.time=120,method = "KM")
 
-svm <- read.csv("C:/Users/xiao/Desktop/研究生毕业论文/rocdatasvm.csv")
+svm <- read.csv("C:/code/rocdatasvm.csv")
 svmr3=  survivalROC(Stime= svm$time, status=svm$os, marker=svm$marker,  predict.time=36,method = "KM")
 svmr5=  survivalROC(Stime= svm$time, status=svm$os, marker=svm$marker,  predict.time=60,method = "KM")
 svmr10=  survivalROC(Stime= svm$time, status=svm$os, marker=svm$marker,  predict.time=120,method = "KM")
 
-rsf <- read.csv("C:/Users/xiao/Desktop/研究生毕业论文/rocdatarsf.csv")
+rsf <- read.csv("C:/code/rocdatarsf.csv")
 rsfr3=  survivalROC(Stime= rsf$time, status=rsf$os, marker=rsf$marker,  predict.time=36,method = "KM")
 rsfr5=  survivalROC(Stime= rsf$time, status=rsf$os, marker=rsf$marker,  predict.time=60,method = "KM")
 rsfr10=  survivalROC(Stime= rsf$time, status=rsf$os, marker=rsf$marker,  predict.time=120,method = "KM")
@@ -76,10 +76,10 @@ svm$subtype <- cut(svm$marker,breaks =c(min(svm$marker),median(svm$marker),max(s
 rsf$subtype <- cut(rsf$marker,breaks =c(min(rsf$marker),median(rsf$marker),max(rsf$marker)),labels = c("low","high"))
 
 #output data to generate KM curves in python
-write.csv(cox,"coxforkm.csv")
-write.csv(cox2,"cox2forkm.csv")
-write.csv(svm,"svmforkm.csv")
-write.csv(rsf,"rsfforkm.csv")
+write.csv(cox,"C:/code/coxforkm.csv")
+write.csv(cox2,"C:/code/cox2forkm.csv")
+write.csv(svm,"C:/code/svmforkm.csv")
+write.csv(rsf,"C:/code/rsfforkm.csv")
 
 #3 years
 coxr=coxr3
@@ -90,7 +90,7 @@ coxr3$AUC
 cox2r3$AUC
 svmr3$AUC
 rsfr3$AUC
-path= "C:/Users/xiao/Desktop/研究生毕业论文/ROC3.jpg"
+path= "C:/code/ROC3.jpg"
 tit="At 3 Years"
 png(file = path,width=600*3,height=3*600,res=72*3)
 #par(pin = c(2.5,2.5))
@@ -122,7 +122,7 @@ coxr5$AUC
 cox2r5$AUC
 svmr5$AUC
 rsfr5$AUC
-path= "C:/Users/xiao/Desktop/研究生毕业论文/ROC5.jpg"
+path= "C:/code/ROC5.jpg"
 tit="At 5 Years"
 
 png(file = path,width=600*3,height=3*600,res=72*3)
@@ -155,7 +155,7 @@ coxr10$AUC
 cox2r10$AUC
 svmr10$AUC
 rsfr10$AUC
-path= "C:/Users/xiao/Desktop/研究生毕业论文/ROC10.jpg"
+path= "C:/code/ROC10.jpg"
 tit="At 10 Years"
 
 png(file = path,width=600*3,height=3*600,res=72*3)
