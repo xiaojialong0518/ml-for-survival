@@ -8,20 +8,20 @@ This repository contains the code and models of the paper **"Machine Learning Mo
 
 **Explanation of each file**
 
-code:
+**code:**
 - mlmain.py: the mean program for data processing and build predictive models
 - cindexandroc.R: evaluate the C-index and time dependent AUC based on the data outputted by mlmain.py
 - kmcurves.py: obtain the figure of survival curves based on the data outputted by cindexandroc.R
 - models.py: load the models we packed and use the models to predict the risk score.
 
-data templates:
+**data templates:**
 - df.xlsx: data used to build predictive models
 - coxentest.xlsx: data used to test the cox-en model
 - coxtest.xlsx: data used to test the cox model
 - svmrsftest.xlsx: data used to test the svm and rsf model
 - rsfimportance.xlsx:  data obtained from iris-importance.htm (users are supposed to move the data from iris-importance.htm to rsfimportance.xlsx)
 
-packed models:
+**packed models:**
 - cox.pkl
 - cox-en.pkl
 - svm.pkl
